@@ -1,40 +1,43 @@
-let playerHp = 100;
-let enemyHp = 100;
-
-function attack() {
-  // Player attacks
-  let damage = Math.floor(Math.random() * 20) + 5;
-  enemyHp -= damage;
-
-  document.getElementById("log").innerText =
-    `You dealt ${damage} damage!`;
-
-  updateUI();
-
-  if (enemyHp <= 0) {
-    document.getElementById("log").innerText = "You win!";
-    return;
-  }
-
-  // Enemy attacks back
-  setTimeout(enemyAttack, 500);
+function openShop() {
+  alert("Shop opening soon!");
 }
 
-function enemyAttack() {
-  let damage = Math.floor(Math.random() * 15) + 3;
-  playerHp -= damage;
-
-  document.getElementById("log").innerText =
-    `Enemy dealt ${damage} damage!`;
-
-  updateUI();
-
-  if (playerHp <= 0) {
-    document.getElementById("log").innerText = "You lost!";
-  }
+function openMonsterHome() {
+  alert("Monster Home coming soon!");
 }
 
-function updateUI() {
-  document.getElementById("playerHp").innerText = `HP: ${playerHp}`;
-  document.getElementById("enemyHp").innerText = `HP: ${enemyHp}`;
+function openEggs() {
+  alert("Egg system coming soon!");
+}
+
+function openDungeons() {
+  alert("Dungeons coming soon!");
+}
+
+function openExplore() {
+  alert("Exploration coming soon!");
+}
+
+function openChat() {
+  alert("World chat coming soon!");
+}
+
+function openMonsters() {
+  alert("Monster menu coming soon!");
+}
+
+function openInventory() {
+  alert("Inventory coming soon!");
+}
+
+function openLeaderboard() {
+  alert("Leaderboard coming soon!");
+}
+
+function openSocial() {
+  alert("Social features coming soon!");
+}
+
+function openMail() {
+  alert("Mailbox coming soon!");
 }
