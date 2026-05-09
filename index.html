@@ -24,6 +24,7 @@
     text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
   }
 
+  /* Tower center */
   .tower {
     position: absolute;
     top: 45%;
@@ -54,29 +55,33 @@
   .amber { background: #ffbf00; }
   .diamond { background: #b9f2ff; color: black; }
 
-  .left-menu, .right-menu {
+  /* Scatter menu buttons */
+  .menu-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .left-menu { left: 20px; }
-  .right-menu { right: 20px; }
-
-  .btn {
     width: 90px;
-    padding: 10px;
-    background: rgba(0,0,0,0.6);
+    height: 90px;
+    background: rgba(0,0,0,0.65);
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 11px;
+    padding: 5px;
   }
 
+  /* Left side scattered */
+  .shop { left: 20px; top: 30%; }
+  .monster-home { left: 20px; top: 55%; }
+
+  /* Right side scattered */
+  .eggs { right: 20px; top: 25%; }
+  .dungeons { right: 20px; top: 50%; }
+  .explore { right: 20px; top: 75%; }
+
+  /* Bottom bar */
   .bottom-bar {
     position: absolute;
     bottom: 0;
@@ -102,6 +107,7 @@
     cursor: pointer;
   }
 
+  /* FIXED CENTER MONSTER BUTTON */
   .monster-btn {
     width: 70px;
     height: 70px;
@@ -113,14 +119,15 @@
     justify-content: center;
     font-weight: bold;
     cursor: pointer;
-    transform: translateY(-20px);
   }
+
 </style>
 </head>
 <body>
 
 <div class="sky-title">The Lost Tower</div>
 
+<!-- Tower -->
 <div class="tower">
   <div class="floor bronze">Bronze</div>
   <div class="floor silver">Silver</div>
@@ -129,17 +136,16 @@
   <div class="floor diamond">Diamond</div>
 </div>
 
-<div class="left-menu">
-  <div class="btn" onclick="openShop()">Shop</div>
-  <div class="btn" onclick="openMonsterHome()">Monster Home</div>
-</div>
+<!-- Left side -->
+<div class="menu-btn shop" onclick="openShop()">Shop</div>
+<div class="menu-btn monster-home" onclick="openMonsterHome()">Monster Home</div>
 
-<div class="right-menu">
-  <div class="btn" onclick="openEggs()">Eggs</div>
-  <div class="btn" onclick="openDungeons()">Dungeons</div>
-  <div class="btn" onclick="openExplore()">Explore</div>
-</div>
+<!-- Right side -->
+<div class="menu-btn eggs" onclick="openEggs()">Eggs</div>
+<div class="menu-btn dungeons" onclick="openDungeons()">Dungeons</div>
+<div class="menu-btn explore" onclick="openExplore()">Explore</div>
 
+<!-- Bottom bar -->
 <div class="bottom-bar">
   <div class="icon" onclick="openChat()">Chat</div>
   <div class="monster-btn" onclick="openMonsters()">Monsters</div>
