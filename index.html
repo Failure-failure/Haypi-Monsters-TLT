@@ -10,114 +10,132 @@
     font-family: Arial, sans-serif;
     overflow: hidden;
     height: 100vh;
-    background: linear-gradient(#7ec8ff, #d6f0ff);
+    background: url('https://via.placeholder.com/1200x800/87ceeb/ffffff') center/cover no-repeat;
   }
 
-  .sky-title {
+  /* TOP BAR */
+  .top-bar {
     position: absolute;
-    top: 15px;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-  }
-
-  /* Tower center */
-  .tower {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 140px;
-    height: 320px;
+    height: 55px;
+    background: rgba(0,0,0,0.55);
     display: flex;
-    flex-direction: column-reverse;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: white;
+    box-sizing: border-box;
   }
 
-  .floor {
-    flex: 1;
+  .top-left, .top-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .pill {
+    background: rgba(255,255,255,0.15);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .energy {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  /* LEFT SIDE ICONS */
+  .left-ui {
+    position: absolute;
+    left: 10px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* RIGHT SIDE WORLD NODES */
+  .right-ui {
+    position: absolute;
+    right: 10px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .node {
+    width: 95px;
+    height: 95px;
+    background: rgba(0,0,0,0.55);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 14px;
+    text-align: center;
     font-size: 12px;
-    font-weight: bold;
-    color: white;
+    cursor: pointer;
   }
 
-  .bronze { background: #cd7f32; }
+  /* CENTER TOWER AREA */
+  .tower-area {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tower-floor {
+    width: 140px;
+    height: 55px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .bronze { background: #cd7f32; color: white; }
   .silver { background: #c0c0c0; }
   .gold { background: #d4af37; }
   .amber { background: #ffbf00; }
-  .diamond { background: #b9f2ff; color: black; }
+  .diamond { background: #b9f2ff; }
 
-  /* Scatter menu buttons */
-  .menu-btn {
+  /* TASK / REWARDS */
+  .task-rewards {
     position: absolute;
-    width: 90px;
-    height: 90px;
-    background: rgba(0,0,0,0.65);
-    color: white;
+    left: 10px;
+    top: 60px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 11px;
-    padding: 5px;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  /* Left side scattered */
-  .shop { left: 20px; top: 30%; }
-  .monster-home { left: 20px; top: 55%; }
-
-  /* Right side scattered */
-  .eggs { right: 20px; top: 25%; }
-  .dungeons { right: 20px; top: 50%; }
-  .explore { right: 20px; top: 75%; }
-
-  /* Bottom bar */
-  .bottom-bar {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 90px;
-    background: rgba(20, 20, 20, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .icon {
-    width: 45px;
-    height: 45px;
-    background: #444;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 10px;
-    cursor: pointer;
-  }
-
-  /* FIXED CENTER MONSTER BUTTON */
-  .monster-btn {
+  .small-btn {
     width: 70px;
-    height: 70px;
-    background: gold;
-    border-radius: 50%;
-    border: 3px solid white;
+    height: 40px;
+    background: rgba(0,0,0,0.6);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    border-radius: 8px;
+    font-size: 11px;
     cursor: pointer;
   }
 
@@ -125,34 +143,47 @@
 </head>
 <body>
 
-<div class="sky-title">The Lost Tower</div>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-left">
+    <div class="pill">👤 Lv29</div>
+    <div class="pill">📜</div>
+  </div>
 
-<!-- Tower -->
-<div class="tower">
-  <div class="floor bronze">Bronze</div>
-  <div class="floor silver">Silver</div>
-  <div class="floor gold">Gold</div>
-  <div class="floor amber">Amber</div>
-  <div class="floor diamond">Diamond</div>
+  <div class="energy">⚡ 120/120</div>
+
+  <div class="top-right">
+    <div class="pill">💰 0</div>
+    <div class="pill">🪙 0</div>
+  </div>
 </div>
 
-<!-- Left side -->
-<div class="menu-btn shop" onclick="openShop()">Shop</div>
-<div class="menu-btn monster-home" onclick="openMonsterHome()">Monster Home</div>
+<!-- TASK / REWARDS -->
+<div class="task-rewards">
+  <div class="small-btn" onclick="openTasks()">Tasks</div>
+  <div class="small-btn" onclick="openRewards()">Rewards</div>
+</div>
 
-<!-- Right side -->
-<div class="menu-btn eggs" onclick="openEggs()">Eggs</div>
-<div class="menu-btn dungeons" onclick="openDungeons()">Dungeons</div>
-<div class="menu-btn explore" onclick="openExplore()">Explore</div>
+<!-- LEFT SIDE (like shop etc) -->
+<div class="left-ui">
+  <div class="node" onclick="openShop()">Shop</div>
+  <div class="node" onclick="openMonsterHome()">Monster Home</div>
+</div>
 
-<!-- Bottom bar -->
-<div class="bottom-bar">
-  <div class="icon" onclick="openChat()">Chat</div>
-  <div class="monster-btn" onclick="openMonsters()">Monsters</div>
-  <div class="icon" onclick="openInventory()">Inv</div>
-  <div class="icon" onclick="openLeaderboard()">LB</div>
-  <div class="icon" onclick="openSocial()">Social</div>
-  <div class="icon" onclick="openMail()">Mail</div>
+<!-- RIGHT SIDE (world systems) -->
+<div class="right-ui">
+  <div class="node" onclick="openEggs()">Eggs</div>
+  <div class="node" onclick="openDungeons()">Dungeons</div>
+  <div class="node" onclick="openExplore()">Exploration</div>
+</div>
+
+<!-- CENTER TOWER -->
+<div class="tower-area">
+  <div class="tower-floor bronze" onclick="enterFloor('bronze')">Bronze Enter</div>
+  <div class="tower-floor silver" onclick="enterFloor('silver')">Silver Enter</div>
+  <div class="tower-floor gold" onclick="enterFloor('gold')">Gold Enter</div>
+  <div class="tower-floor amber" onclick="enterFloor('amber')">Amber Enter</div>
+  <div class="tower-floor diamond" onclick="enterFloor('diamond')">Diamond Enter</div>
 </div>
 
 <script src="game.js"></script>
