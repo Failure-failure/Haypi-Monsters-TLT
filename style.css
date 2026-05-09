@@ -1,1 +1,18 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #111;
+  color: white;
+}
 
+#battle {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
